@@ -10,6 +10,13 @@
   },
   "author": "Julian Bilcke <julian.bilcke@datagica.com>",
   "license": "GPL-3.0",
+  "repository" : {
+    "type" : "git",
+    "url" : "https://github.com/datagica/match-skills.git"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
   "dependencies": {
     "babel-runtime": "6.0.14"
   },
