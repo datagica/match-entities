@@ -2,17 +2,12 @@ const chai = require('chai')
 chai.use(require('chai-fuzzy'))
 const expect = chai.expect
 
-import {
-  matchAll, matchScore
-}
-from "../../lib/match-skills"
+const matchSkills = require("../lib/match-skills");
 
 describe('MatchSkills', () => {
   describe('matchScore', () => {
 
     it('should return the score', function(done) {
-      this.timeout(10000)
-
 
       const tests = [{
         input: {
@@ -36,7 +31,7 @@ describe('MatchSkills', () => {
 
         return prom.then(() => {
 
-          return matchScore(test.input.a, test.input.b).then(output => {
+          return matchSkills.matchScore(test.input.a, test.input.b).then(output => {
             expect(output).to.be.like(test.output)
             return Promise.resolve(true)
           })
@@ -53,7 +48,6 @@ describe('MatchSkills', () => {
   describe('matchAll', () => {
 
     it('should return list of matched items', function(done) {
-      this.timeout(10000)
 
       const tests = [{
         input: {
@@ -79,7 +73,7 @@ describe('MatchSkills', () => {
 
         return prom.then(() => {
 
-          return matchAll(test.input.a, test.input.b, "ids").then(output => {
+          return matchSkills.matchAll(test.input.a, test.input.b, "ids").then(output => {
             expect(output).to.be.like(test.output)
             return Promise.resolve(true)
           })
