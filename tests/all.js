@@ -25,6 +25,13 @@ describe('MatchSkills', () => {
           }]
         },
         output: 2
+      },
+      {
+        input: {
+          a: ["skill-1","skill-2","skill-3"],
+          b: ["skill-2","skill-3"]
+        },
+        output: 2
       }]
 
       tests.reduce((prom, test) => {

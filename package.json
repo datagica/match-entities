@@ -1,6 +1,6 @@
 {
   "name": "@datagica/match-skills",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "registry": "github",
   "description": "Compute match between two arrays of skills",
   "main": "./lib/match-skills.js",
