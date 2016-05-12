@@ -1,1 +1,3 @@
-Compute a match between two arrays of skills
+# Datagica Match entities
+
+Compute a match between two arrays of entities

@@ -2,9 +2,9 @@ const chai = require('chai')
 chai.use(require('chai-fuzzy'))
 const expect = chai.expect
 
-const matchSkills = require("../lib/match-skills");
+const matchEntities = require("../lib/match-entities");
 
-describe('MatchSkills', () => {
+describe('match entities', () => {
   describe('matchScore', () => {
 
     it('should return the score', function(done) {
@@ -12,24 +12,24 @@ describe('MatchSkills', () => {
       const tests = [{
         input: {
           a: [{
-            id: "skill-1"
+            id: "entity-1"
           }, {
-            id: "skill-2"
+            id: "entity-2"
           }, {
-            id: "skill-3"
+            id: "entity-3"
           }],
           b: [{
-            id: "skill-2"
+            id: "entity-2"
           }, {
-            id: "skill-3"
+            id: "entity-3"
           }]
         },
         output: 2
       },
       {
         input: {
-          a: ["skill-1","skill-2","skill-3"],
-          b: ["skill-2","skill-3"]
+          a: ["entity-1","entity-2","entity-3"],
+          b: ["entity-2","entity-3"]
         },
         output: 2
       }]
@@ -38,7 +38,7 @@ describe('MatchSkills', () => {
 
         return prom.then(() => {
 
-          return matchSkills.matchScore(test.input.a, test.input.b).then(output => {
+          return matchEntities.matchScore(test.input.a, test.input.b).then(output => {
             expect(output).to.be.like(test.output)
             return Promise.resolve(true)
           })
@@ -59,20 +59,20 @@ describe('MatchSkills', () => {
       const tests = [{
         input: {
           a: [{
-            id: "skill-1"
+            id: "entity-1"
           }, {
-            id: "skill-2"
+            id: "entity-2"
           }],
           b: [{
-            id: "skill-2"
+            id: "entity-2"
           }, {
-            id: "skill-3"
+            id: "entity-3"
           }]
         },
         output: {
           score: 1,
           matches: [
-            "skill-2"
+            "entity-2"
           ]
         }
       }]
@@ -80,7 +80,7 @@ describe('MatchSkills', () => {
 
         return prom.then(() => {
 
-          return matchSkills.matchAll(test.input.a, test.input.b, "ids").then(output => {
+          return matchEntities.matchAll(test.input.a, test.input.b, "ids").then(output => {
             expect(output).to.be.like(test.output)
             return Promise.resolve(true)
           })

@@ -1,9 +1,9 @@
 {
-  "name": "@datagica/match-skills",
-  "version": "0.0.2",
+  "name": "@datagica/match-entities",
+  "version": "0.0.0",
   "registry": "github",
-  "description": "Compute match between two arrays of skills",
-  "main": "./lib/match-skills.js",
+  "description": "Compute simimarity between two arrays of entities",
+  "main": "./lib/match-entities.js",
   "scripts": {
     "test": "node_modules/.bin/mocha --harmony --bail --require chai tests/*.js"
   },
@@ -11,7 +11,7 @@
   "license": "GPL-3.0",
   "repository" : {
     "type" : "git",
-    "url" : "https://github.com/datagica/match-skills.git"
+    "url" : "https://github.com/datagica/match-entities.git"
   },
   "publishConfig": {
     "access": "public"
@@ -19,12 +19,12 @@
   "dependencies": {
   },
   "devDependencies": {
-    "chai": "3.2.0",
-    "chai-fuzzy": "1.6.0",
+    "chai": "3.5.0",
+    "chai-fuzzy": "1.6.1",
     "deep-eql": "0.1.3",
     "ghooks": "0.3.2",
-    "lodash": "3.10.1",
-    "mocha": "2.3.3",
+    "lodash": "4.11.1",
+    "mocha": "2.4.5",
     "underscore": "1.8.3"
   }
 }
